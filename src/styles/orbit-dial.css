@@ -1,0 +1,36 @@
+.orbit-svg { width: 100%; height: 100%; overflow: visible; display: block; }
+.dial-shadow { fill: rgba(0,0,0,.18); filter: blur(12px); }
+.dial-face { fill: rgba(3, 12, 27, .46); stroke: rgba(255,255,255,.08); stroke-width: 1; }
+.dial-track { fill: none; stroke: rgba(178, 209, 255, .1); stroke-width: 5; }
+.dial-progress { fill: none; stroke: url(#orbitArc); stroke-width: 5; stroke-linecap: round; transform: rotate(-90deg); transform-origin: 200px 200px; filter: url(#softGlow); transition: stroke-dashoffset .1s linear; }
+.dial-ticks line { stroke: rgba(201,225,255,.24); stroke-width: 1; }
+.dial-ticks .major-tick { stroke: var(--accent); stroke-width: 2; opacity: .76; }
+.lap-marker { fill: var(--accent); stroke: var(--bg-0); stroke-width: 2; filter: url(#softGlow); }
+.inner-ring { fill: none; stroke: rgba(255,255,255,.08); stroke-width: 1; stroke-dasharray: 2 8; }
+.wave-group { opacity: .48; mix-blend-mode: screen; transform-origin: 50% 50%; }
+.wave { fill: var(--accent-strong); }
+.wave-back { opacity: .22; animation: wave-drift 8s ease-in-out infinite alternate; }
+.wave-front { fill: var(--accent); opacity: .16; animation: wave-drift 5s ease-in-out infinite alternate-reverse; }
+.wave-fill { fill: var(--accent); opacity: .08; transform: translateY(var(--wave-level)); transition: transform .2s linear; }
+.planet-aura { fill: url(#planetGlow); opacity: .74; }
+.planet { fill: var(--accent); filter: url(#softGlow); }
+.planet-core { fill: white; opacity: .92; }
+.particle-trail circle { fill: var(--accent); filter: url(#softGlow); }
+.particle-trail--active circle { animation: particle-pulse 1.2s ease-in-out infinite alternate; }
+.dial-center-content { position: absolute; inset: 25% 10%; display: grid; place-items: center; text-align: center; }
+.flip-readout { display: flex; align-items: center; justify-content: center; gap: clamp(3px, 1vw, 8px); width: 100%; transform: translateY(2px); }
+.flip-unit { display: grid; justify-items: center; gap: 5px; min-width: 0; }
+.flip-tile { position: relative; display: flex; align-items: center; justify-content: center; gap: 1px; padding: clamp(5px, 1vw, 9px) clamp(4px, 1vw, 8px); border: 1px solid rgba(255,255,255,.18); border-radius: 7px; color: var(--text); background: linear-gradient(180deg, rgba(31,48,65,.94) 0%, rgba(8,19,34,.96) 48%, rgba(0,0,0,.98) 50%, rgba(9,21,35,.96) 52%, rgba(17,32,48,.94) 100%); box-shadow: 0 8px 20px rgba(0,0,0,.38), inset 0 1px rgba(255,255,255,.12), 0 0 18px var(--accent-soft); font: 600 clamp(17px, 2.8vw, 31px)/.9 'JetBrains Mono', monospace; letter-spacing: -.1em; text-shadow: 0 0 12px rgba(255,255,255,.2); }
+.flip-tile::before, .flip-tile::after { content: ''; position: absolute; left: 0; right: 0; height: 1px; background: rgba(0,0,0,.5); }
+.flip-tile::before { top: 50%; }
+.flip-tile::after { top: calc(50% - 1px); background: rgba(255,255,255,.12); }
+.flip-tile i { width: 1px; height: 1.2em; background: rgba(255,255,255,.08); }
+.flip-unit-label { color: var(--muted); font: 500 7px 'JetBrains Mono', monospace; letter-spacing: .14em; text-transform: uppercase; }
+.flip-separator { align-self: flex-start; margin-top: 11px; color: var(--accent); font: 700 18px 'JetBrains Mono', monospace; text-shadow: 0 0 12px var(--accent-soft); }
+.flip-separator--small { color: var(--secondary); }
+.dial-label { position: absolute; color: var(--muted); font: 500 8px 'JetBrains Mono', monospace; letter-spacing: .16em; text-transform: uppercase; }
+.dial-label--top { top: 18%; left: 50%; transform: translateX(-50%); }
+.dial-label--bottom { bottom: 17%; left: 50%; transform: translateX(-50%); }
+@keyframes wave-drift { from { transform: translateX(-4px); } to { transform: translateX(5px); } }
+@keyframes particle-pulse { from { opacity: .18; } to { opacity: .8; } }
+@media (prefers-reduced-motion: reduce) { .wave-back, .wave-front, .particle-trail--active circle { animation: none; } }

@@ -1,0 +1,10 @@
+.controls { display: flex; align-items: center; justify-content: center; gap: 20px; }
+.primary-control { width: 66px; height: 66px; border-radius: 50%; position: relative; display: grid; place-items: center; border: 1px solid var(--accent); color: var(--bg-0); background: var(--accent); box-shadow: 0 0 0 7px var(--accent-soft), 0 0 30px var(--accent-soft); cursor: pointer; transition: .25s ease; }
+.primary-control:hover { transform: translateY(-2px); box-shadow: 0 0 0 12px var(--accent-soft), 0 0 52px var(--accent-soft); }
+.primary-control--running { color: var(--text); background: var(--state); border-color: var(--state); }
+.primary-control--running::after { content: ''; position: absolute; inset: -9px; border: 1px solid var(--state); border-radius: 50%; opacity: .42; animation: control-pulse 2s ease-out infinite; }
+.control-orbit { position: absolute; inset: -14px; border: 1px dashed var(--accent); border-radius: 50%; opacity: .35; transform: rotate(-18deg); }
+.secondary-control { min-width: 70px; border: 0; color: var(--muted); background: transparent; display: inline-flex; align-items: center; justify-content: center; gap: 7px; cursor: pointer; font: 500 10px 'JetBrains Mono', monospace; letter-spacing: .08em; text-transform: uppercase; transition: .2s ease; }
+.secondary-control:hover:not(:disabled) { color: var(--accent); transform: translateY(-2px); }
+.secondary-control:disabled { opacity: .32; cursor: not-allowed; }
+@keyframes control-pulse { 0% { transform: scale(.92); opacity: .55; } 85%, 100% { transform: scale(1.2); opacity: 0; } }

@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-labelledby="title desc">
+  <title id="title">Stopwatch</title>
+  <desc id="desc">Neon green orbit stopwatch icon</desc>
+  <defs>
+    <radialGradient id="bg" cx="35%" cy="25%" r="90%">
+      <stop offset="0" stop-color="#122b24"/>
+      <stop offset="1" stop-color="#06101a"/>
+    </radialGradient>
+    <filter id="glow" x="-80%" y="-80%" width="260%" height="260%">
+      <feGaussianBlur stdDeviation="1.8" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+  <rect width="64" height="64" rx="16" fill="url(#bg)"/>
+  <circle cx="32" cy="35" r="19" fill="none" stroke="#203d35" stroke-width="2"/>
+  <circle cx="32" cy="35" r="15" fill="#07131b" stroke="#74ff00" stroke-opacity=".8" stroke-width="1.5" filter="url(#glow)"/>
+  <path d="M32 35 42 27" fill="none" stroke="#74ff00" stroke-width="2.5" stroke-linecap="round" filter="url(#glow)"/>
+  <circle cx="32" cy="35" r="2.5" fill="#74ff00" filter="url(#glow)"/>
+  <rect x="28" y="8" width="8" height="4" rx="2" fill="#74ff00"/>
+  <path d="M46 14 50 10" stroke="#74ff00" stroke-width="2.5" stroke-linecap="round"/>
+  <ellipse cx="32" cy="35" rx="25" ry="10" fill="none" stroke="#74ff00" stroke-opacity=".8" stroke-width="1.5" transform="rotate(-24 32 35)" filter="url(#glow)"/>
+  <circle cx="52" cy="24" r="3" fill="#74ff00" filter="url(#glow)"/>
+</svg>

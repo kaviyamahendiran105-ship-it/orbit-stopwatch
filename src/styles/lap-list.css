@@ -1,0 +1,14 @@
+.lap-card { min-height: 180px; }
+.lap-card .card-heading > div { display: flex; flex-direction: column; gap: 4px; }
+.lap-list { display: flex; flex-direction: column; gap: 8px; max-height: 310px; overflow: auto; padding-right: 2px; }
+.lap-row { display: grid; grid-template-columns: 48px 1fr auto; gap: 10px; align-items: center; padding: 10px 0; border-top: 1px solid rgba(255,255,255,.06); }
+.lap-index { display: flex; flex-direction: column; gap: 4px; }
+.lap-index span { color: var(--accent); font: 600 11px 'JetBrains Mono', monospace; }
+.lap-index small, .lap-values span { color: var(--muted); font: 400 9px 'JetBrains Mono', monospace; }
+.lap-values { display: flex; align-items: baseline; gap: 10px; }
+.lap-values strong { font: 600 13px 'JetBrains Mono', monospace; letter-spacing: -.05em; }
+.lap-badge-wrap { display: flex; gap: 5px; }
+.lap-badge { padding: 4px 6px; border-radius: 999px; font: 700 8px 'JetBrains Mono', monospace; letter-spacing: .08em; }
+.lap-badge--fast { color: #86f5b1; background: rgba(88, 219, 140, .13); border: 1px solid rgba(88,219,140,.22); }
+.lap-badge--slow { color: #ff8e9b; background: rgba(255, 107, 122, .13); border: 1px solid rgba(255,107,122,.22); }
+.empty-laps { min-height: 112px; color: var(--muted); display: grid; place-items: center; align-content: center; gap: 10px; font-size: 12px; border: 1px dashed var(--line); border-radius: 14px; }
